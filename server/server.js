@@ -5,7 +5,7 @@ const PORT = 3000;
 
 const ticketRouter = require('./ticketRouter');
 
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/', express.static(path.resolve(__dirname, '/public/')));
 
