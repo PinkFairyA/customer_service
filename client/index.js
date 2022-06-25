@@ -13,12 +13,12 @@ import 'bootstrap';
 //after importing the file, add it as a route with the route url that was specified in its parent url component
 const root = ReactDOM.createRoot(document.getElementById('myRoot'));
 root.render(
-  // <Provider store={store}>
+//<Provider store={store}>
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/login" element={<Login />} />
     </Routes>
   </BrowserRouter>
-  // </Provider>
+// </Provider>
 );
