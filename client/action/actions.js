@@ -15,12 +15,27 @@ export const updateTicket = data => ({
     payload: data,
   });
 
-  export const resolveTicket = data => ({
+export const resolveTicket = data => ({
     type: types.RESOLVE_TICKET,
     payload: data,
   });
 
-  export const escalateTicket = data => ({
+export const escalateTicket = data => ({
     type: types.ESCALATE_TICKET,
+    payload: data,
+  });
+
+export const addClient = data => ({
+    type: types.ADD_CLIENT,
+    payload: data,
+  });
+
+export const addCustomer = data => ({
+    type: types.ADD_CUSTOMER,
+    payload: data,
+  });
+
+export const addCustomerPhone = data => ({
+    type: types.ADD_CUSTOMER_PHONE,
     payload: data,
   });
