@@ -44,3 +44,17 @@ const createAppointment = `CREATE TABLE appointment (
     appt_time time,
     PRIMARY KEY(ticket_id, appt_dt, appt_time));`;
 
+
+
+// fake data
+// login
+// id 1
+// username: jimwhite
+// password: jimiscool
+
+// id 2
+// username: test1
+// password: test1
+
+
+// INSERT INTO "public"."users" (id, first_name, last_name, street_address, zip_code, phone, email, service_type) VALUES (1, 'Jim', 'White', '123 Fake Street', 92129, '(123) 456-7890', 'jimservice@gmail.com', 'connectivity')
