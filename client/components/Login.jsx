@@ -1,7 +1,5 @@
 import React, { Component, useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { createHistory } from 'react-router';
-import './loginstyles.scss';
+import '../styles/loginstyles.scss';
 
 
 export default function Login(){
@@ -17,8 +15,8 @@ export default function Login(){
     
     return(
         <div>
-           <main>
-                <div>
+           <main id="mainpage">
+                <div id="login-container">
                     <h3>Hello</h3>
                     <div className='username-container'>
                         <label htmlFor='username-input'>Username</label>
