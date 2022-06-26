@@ -1,0 +1,21 @@
+#mainpage{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "top-right top-mid top-left"
+                         "mid-left true-mid mid-right"
+                         "bottom-left bottom-mid bottom-right";
+    justify-items: center;
+    align-items: center;
+    
+    #login-container{
+        grid-area: true-mid;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        width: 300px;
+        border: 2px solid rgb(61, 61, 61);
+    }
+}
