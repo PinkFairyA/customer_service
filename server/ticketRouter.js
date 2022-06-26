@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const ticketController = require('/database/controller.js')
+const ticketController = require('./database/controller.js')
 
 // router
 //   .route('/')

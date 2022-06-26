@@ -19,4 +19,4 @@ export const RESOLVE_TICKET = 'RESOLVE_TICKET';
 export const ADD_CUSTOMER = 'ADD_CUSTOMER';
 export const ADD_CUSTOMER_PHONE = 'ADD_CUSTOMER_PHONE';
 export const CHOOSE_DATE = 'CHOOSE_DATE';
-
+export const ADD_TICKET_ROWS = 'ADD_TICKET_ROWS'; // store info on the ticket rows displayed on AgentPortal

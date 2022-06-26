@@ -1,7 +1,7 @@
 import * as types from '../constants/actionTypes.js'
 
 const initialState = {
-
+    ticketRowElements: [],
 }
 
 const clientReducer = (state = initialState, action) => {
@@ -9,6 +9,13 @@ const clientReducer = (state = initialState, action) => {
         case types.ADD_TICKET: {
             return {
                 ...state
+            }
+        }
+        
+        case types.ADD_TICKET_ROWS: {
+            return {
+                ...state,
+                ticketRowElements: action.payload,
             }
         }
         // case types.DELETE_TICKET: {
