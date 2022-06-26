@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import clientReducer from './clientReducer.js'
+import customerReducer from './customerReducer.js';
 
 const reducers = combineReducers({
-  client: clientReducer,
+  customerDetails: customerReducer,
 });
 
 // export default reducers(state, action);

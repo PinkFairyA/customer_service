@@ -11,7 +11,6 @@ import 'bootstrap';
 const root = ReactDOM.createRoot(document.getElementById('myRoot'));
 root.render(
   <Provider store={store}>
-    {/* <Provider> */}
     <p>Go Team!</p>
     <CustomerDetailContainer />
     <p>Yeah Team!</p>

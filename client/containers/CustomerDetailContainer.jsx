@@ -1,5 +1,5 @@
-import React from "react";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import { connect, Provider } from "react-redux";
 import { bindActionsCreators } from 'redux';
 import  CustomerDetail  from '../components/customerDetail.jsx';
 // import { TicketNote } from '../components/';
@@ -7,19 +7,38 @@ import  CustomerDetail  from '../components/customerDetail.jsx';
 // import { CustomerHistory } from '../components/customerDetail';
 
 import * as customerDetailActions from '../actions/customerDetailActions.js';
+// function mapStateToProps(state, ownProps) {
+function mapStateToProps(state) {
+  // const mapStateToProps = state => ({
+  return {customerDetail: state.customerDetail}
+}
 
-class CustomerDetailContainer extends React.Component {
+function mapDispatchToProps(dispatch) {
+return {actions: bindActionCreators(customerDetailActions, dispatch)}
+}
+
+
+// const mapStateToProps = state => ({
+
+// })
+
+
+class CustomerDetailContainer extends Component
+
+{
 
   constructor(props) {
     super(props);
-    this.state = {selectedCustomer: null, selectDate: null, selectTime: null}
+    // this.state = {customerDetail: CustomerDetail, selectedCustomer: null, selectDate: null, selectTime: null}
   }
 
-  componentDidMount() {
+//   componentDidMount() {
   
-}
+// }
 
   render() {
+    
+    console.log('🔴🟠🟡🟢🔵🟣 | file: CustomerDetailContainer.jsx | line 24 | CustomerDetailContainer | render | this.props.customerDetail', this);
     return (
     <div className="agentScreen">
     <p>Yada Yada</p>
@@ -55,13 +74,6 @@ class CustomerDetailContainer extends React.Component {
   }
 }
 
-  function mapStateToProps(state, ownProps) {
-    return {ticketDetail: state.ticketDetail}
-}
-
-function mapDispatchToProps(dispatch) {
-  return {actions: bindActionCreators(customerDetailActions, dispatch)}
-}
-
-// export default connect(mapStateToProps, mapDispatchToProps)(CustomerDetailContainer)
-export default CustomerDetailContainer;
+// export connect(mapStateToProps, null);
+export default connect(mapStateToProps, null)(CustomerDetailContainer);
+// export default CustomerDetailContainer;

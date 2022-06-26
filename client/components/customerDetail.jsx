@@ -11,8 +11,10 @@
 
  import React from 'react';
  
- const CustomerDetail = (props) => (
-   <div className='customerDetailBox'>
+
+const CustomerDetail = (props) => {
+  return (
+  <div className='customerDetailBox'>
      <span>
        <p className='NameLabel'>
          <b>Name: </b>
@@ -45,6 +47,7 @@
      </span>
    </div>
  );
-  
+}
+ 
  export default CustomerDetail;
  
