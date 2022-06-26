@@ -1,8 +1,6 @@
 import { combineReducers } from 'redux';
-import client from './clientReducer.js'
+import client from './clientReducer.js';
 
-const reducers = combineReducers({
-    client,
+export default combineReducers({
+    client
 });
-
-export default reducers;
