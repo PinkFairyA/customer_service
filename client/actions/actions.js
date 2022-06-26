@@ -25,10 +25,10 @@ export const escalateTicket = data => ({
     payload: data,
   });
 
-export const addClient = data => ({
-    type: types.ADD_CLIENT,
-    payload: data,
-  });
+// export const addClient = data => ({
+//     type: types.ADD_CLIENT,
+//     payload: data,
+//   });
 
 export const addCustomer = data => ({
     type: types.ADD_CUSTOMER,
