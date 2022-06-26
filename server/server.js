@@ -13,34 +13,19 @@ app.use('/', express.static(path.resolve(__dirname, '/public/')));
 
 // ! These commented lines are for database access using knex with MySQL
 
-
-const db = require('knex')({
-  client: 'mysql2',
-  connection: {
-    host: '23.235.206.125',
-    port: 3306,
-    user: 'jimtermini_customer',
-    password: 'MySup3rS3cr3tPassw0rd',
-    database: 'jimtermini_SoloProject',
-  },
-});
-
-
-
 // const db = require('knex')({
-//   client: 'ps',
+//   client: 'mysql2',
 //   connection: {
-//     host: '',
-//     port: 000,
-//     user: '',
-//     password: '',
-//     database: '',
+//     host: '23.235.206.125',
+//     port: 3306,
+//     user: 'jimtermini_customer',
+//     password: 'MySup3rS3cr3tPassw0rd',
+//     database: 'jimtermini_SoloProject',
 //   },
 // });
+// app.set('db', db);
 
-app.set('db', db);
-
-app.use('/ticketRouter', ticketRouter);
+// app.use('/ticketRouter', ticketRouter)
 
 app.use((err, req, res, next) => {
   const defaultErr = {
