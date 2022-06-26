@@ -1,16 +1,24 @@
-import * as types from '../action/actions.js'
+import * as types from '../actions/actions.js'
 
 const initialState = {
-
+  firstName: '',
+  lastName: '',
+  address: '',
+  city: '',
+  st: '',
+  zip: '',
+  phone: '',
+  email: '',
+  id: '',
 }
 
 const clientReducer = (state = initialState, action) => {
     switch (action.type) {
-        case types.ADD_TICKET: {
-
+        case types.addTicket: {
+        return state;
         }
         default: {
-            return state
+        return state;
         }
     }
 }

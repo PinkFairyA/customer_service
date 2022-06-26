@@ -9,6 +9,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/', express.static(path.resolve(__dirname, '/public/')));
 
+
+
+// ! These commented lines are for database access using knex with MySQL
+
+
 const db = require('knex')({
   client: 'mysql2',
   connection: {
@@ -19,6 +24,19 @@ const db = require('knex')({
     database: 'jimtermini_SoloProject',
   },
 });
+
+
+
+// const db = require('knex')({
+//   client: 'ps',
+//   connection: {
+//     host: '',
+//     port: 000,
+//     user: '',
+//     password: '',
+//     database: '',
+//   },
+// });
 
 app.set('db', db);
 

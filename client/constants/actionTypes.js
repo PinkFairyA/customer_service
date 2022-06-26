@@ -19,4 +19,5 @@ export const RESOLVE_TICKET = 'RESOLVE_TICKET';
 export const ADD_CLIENT = 'ADD_CLIENT';
 export const ADD_CUSTOMER = 'ADD_CUSTOMER';
 export const ADD_CUSTOMER_PHONE = 'ADD_CUSTOMER_PHONE';
+export const CHOOSE_DATE = 'CHOOSE_DATE';
 
