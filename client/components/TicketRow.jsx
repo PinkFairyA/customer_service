@@ -1,14 +1,15 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
-const TicketRow = () => {
+const TicketRow = (props) => {
 
     return (
-        <tr>
-            <td>Filler1</td>
-            <td>Filler2</td>
-            <td>Filler3</td>
-            <td>Filler4</td>
-            <td>Filler5</td>
+        <tr id={props.idHTML}>
+            <td className='td-ticket-data'>{props.ticket_id}</td>
+            <td className='td-ticket-data'>{props.client_name}</td>
+            <td className='td-ticket-data'>{props.ticket_reason}</td>
+            <td className='td-ticket-data'>{props.ticket_status}</td>
+            <td className='td-ticket-data'>{props.create_tmstmp}</td>
         </tr>
     )
 };

@@ -1,7 +1,8 @@
 import * as types from '../constants/actionTypes.js'
 
 const initialState = {
-    ticketRowElements: [],
+    ticketRowElements: [{ticket_id: 1, ticket_reason: 'Internet too slow', 
+        ticket_status: 'Open', first_name: 'John', last_name: 'Smith', create_tmstmp: '2022-06-24 12:00:00'}],
 }
 
 const clientReducer = (state = initialState, action) => {
@@ -11,7 +12,7 @@ const clientReducer = (state = initialState, action) => {
                 ...state
             }
         }
-        
+
         case types.ADD_TICKET_ROWS: {
             return {
                 ...state,
