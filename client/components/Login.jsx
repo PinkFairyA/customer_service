@@ -1,7 +1,14 @@
-import React, { useRef } from 'react';
+import React, { Component, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { createHistory } from 'react-router';
+import './loginstyles.scss';
+
 
 export default function Login(){
+    // useEffect(() => {
+    //     location.reload();
+    // })
+
     const userNameRef = useRef(null);
     const passRef = useRef(null);
     const handleSubmit = () => {

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 // import store from './app/store.js';
 import './index.scss';
+import './components/loginstyles.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 //import all route files
@@ -15,10 +16,12 @@ const root = ReactDOM.createRoot(document.getElementById('myRoot'));
 root.render(
 //<Provider store={store}>
   <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/login" element={<Login />} />
-    </Routes>
+    <div>
+      <Routes>
+        <Route exact path="/" element={<App/>} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </div>
   </BrowserRouter>
 // </Provider>
 );
