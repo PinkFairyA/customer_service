@@ -17,16 +17,16 @@ export default function Login(){
         <div>
            <main id="mainpage">
                 <div id="login-container">
-                    <h3>Hello</h3>
+                    <h4>Login</h4>
                     <div className='username-container'>
-                        <label htmlFor='username-input'>Username</label>
+                        <label htmlFor='username-input'>Username:</label>
                         <input type='text' id='username-input' ref={userNameRef}/>
                     </div>
                     <div className='password-container'>
-                        <label htmlFor='password-input'>Password</label>
+                        <label htmlFor='password-input'>Password:</label>
                         <input type='password' id='password-input' ref={passRef}/>
                     </div>
-                    <button onClick={handleSubmit}>Submit</button>
+                    <button id="button" onClick={handleSubmit}>Submit</button>
                 </div>
            </main>
         </div>
