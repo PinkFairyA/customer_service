@@ -27,6 +27,8 @@ module.exports = {
       '/login': 'http://localhost:3000',
     }
   },
+
+  // mode: 'development',
   mode: process.env.NODE_ENV,
   module: {
     rules: [
@@ -57,7 +59,9 @@ module.exports = {
         },
       },
       {
-        test: /\.s[ac]ss$/i,
+        // test: /\.s[ac]ss$/i,
+        // test: /\.s[ac]ss$/i,
+        test: /\.(s?(a|c)ss)$/i,
         use: [
           {
             loader: 'style-loader', // inject CSS to page

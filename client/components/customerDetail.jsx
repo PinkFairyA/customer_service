@@ -39,15 +39,15 @@ const  connectToDB = () => {
   // dispatch({ type: 'info', payload: 'if applicable'})
 
   return (
-    <div className='container'>
+    <div className='container  border border-3 rounded-3 mt-2 p-2 border-info shadow'>
     <button
       onClick={() => this.connectToDB()}
       className='btn btn-primary btn-sm m-2'>
-      Connect to DB
+      Fetch Customer Info
     </button>
 
 
-      <div className="container border border-3 rounded-3 mt-2 p-2 border-info shadow">
+      <div className="container">
 
       <div className='row'>
         <div className='col-md-6'>
