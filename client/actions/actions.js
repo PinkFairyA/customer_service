@@ -5,10 +5,14 @@ export const addTicketRows = data => ({
   payload: data
 });
 
-// export const addTicket = data => ({
-//     type: types.ADD_TICKET,
-//     payload: data,
-//   });
+export const addTicket = data => ({
+    type: types.ADD_TICKET,
+    payload: data,
+  });
+
+export const logIn = () => ({
+  type: types.LOG_IN,
+})
 
 // export const deleteTicket = data => ({
 //     type: types.DELETE_TICKET,

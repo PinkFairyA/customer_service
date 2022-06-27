@@ -2,7 +2,6 @@ const { Pool } = require('pg')
 
 // PG URI goes here
 
-
 const pool = new Pool({
     connectionString: PG_URI
 })

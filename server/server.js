@@ -3,18 +3,23 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 
-const ticketRouter = require('./ticketRouter');
+const ticketRouter = require('./ticketRouter.js');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use('/', express.static(path.resolve(__dirname, '/public/')));
-app.use('/ticketRouter', ticketRouter);
+app.use('/build', express.static(path.join(__dirname, '../build')));
+app.use(express.static(path.join(__dirname, '../client')));
+app.use('/', ticketRouter);
 
 // Get request to respond with main ticket page(?). - IB
 // Home ticket page would go after __dirname
-app.get('/', (req, res) => {
-  return res.status(200).sendFile(path.join(__dirname, '../'))
-});
+// app.get('/', (req, res) => {
+//   return res.status(200).sendFile(path.join(__dirname, '../'))
+// });
+// app.get('/', (req, res) => {
+//   return res.status(200).json('OK!')
+// });
+
 
 
 // catch-all route handler for unknown route requests. - IB
