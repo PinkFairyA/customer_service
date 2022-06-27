@@ -1,12 +1,12 @@
 import React from "react";
 import TicketRow from './TicketRow.jsx';
-import { addTicketRows } from "../action/actions.js";
+import { addTicketRows } from "../actions/actions.js";
 import { ADD_TICKET_ROWS } from "../constants/actionTypes.js";
 import { useSelector, useDispatch } from "react-redux";
 
 const AgentPortal = (props) => {
     const dispatch = useDispatch();
-    const ticketRowElements = useSelector((state) => state.client.ticketRowElements);
+    const ticketRowElements = useSelector((state) => state.customer.ticketRowElements);
     const ticketRowRender = [];
 
     const thTicketData = (str) => {

@@ -3,6 +3,7 @@ import { connect, Provider } from "react-redux";
 import { bindActionsCreators } from 'redux';
 import CustomerDetail from '../components/customerDetail.jsx';
 import TicketNotes from '../components/customerNotes.jsx';
+import TicketReason from '../components/ticketReason.jsx';
 // import { TicketNote } from '../components/';
 // import { TicketDetail } from '../components/customerDetail';
 // import { CustomerHistory } from '../components/customerDetail';
@@ -57,20 +58,36 @@ class CustomerDetailContainer extends Component
     
     console.log('🔴🟠🟡🟢🔵🟣 | file: CustomerDetailContainer.jsx | line 24 | CustomerDetailContainer | render | this.props.customerDetail', this);
     return (
-    <div className="agentScreen row-cols-2">
-      
-      <div className="customerDetails">
+    <div className="agentScreen mx-5">
+        <div className="row">
+            
+      <div className="customerDetails col-md-6">
         <CustomerDetail
           customerDetail={this.props.customerDetail}
           />
       </div>
 
-      <div className="customerNotes">
+      <div className="ticketReason col-md-6">
+          <TicketReason
+            customerNotes={this.props.customerNotes}
+          />
+      </div>
+      </div>
+
+
+        <div className="row">
+      <div className="customerNotes col-md-6">
+          <TicketNotes
+            customerNotes={this.props.customerNotes}
+          />
+      </div>
+      <div className="customerHistory col-md-6">
           <TicketNotes
             customerNotes={this.props.customerNotes}
           />
       </div>
 
+      </div>
       {/* <div className="ticketNote">
         <TicketNote
           ticketNote={this.props.ticketNote}

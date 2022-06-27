@@ -5,10 +5,20 @@ export const addTicketRows = data => ({
   payload: data
 });
 
-// export const addTicket = data => ({
-//     type: types.ADD_TICKET,
-//     payload: data,
-//   });
+export const addTicket = data => ({
+    type: types.ADD_TICKET,
+    payload: data,
+  });
+
+export const ADD_TICKET_ROWS = data => ({
+  type: types.ADD_TICKET_ROWS,
+  payload: data
+});
+
+export const ADD_TICKET = data => ({
+    type: types.ADD_TICKET,
+    payload: data,
+  });
 
 // export const deleteTicket = data => ({
 //     type: types.DELETE_TICKET,
