@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect, Provider } from "react-redux";
 import { bindActionsCreators } from 'redux';
-import  CustomerDetail  from '../components/customerDetail.jsx';
+import CustomerDetail from '../components/customerDetail.jsx';
+import TicketNotes from '../components/customerNotes.jsx';
 // import { TicketNote } from '../components/';
 // import { TicketDetail } from '../components/customerDetail';
 // import { CustomerHistory } from '../components/customerDetail';
@@ -18,7 +19,10 @@ import  CustomerDetail  from '../components/customerDetail.jsx';
 import * as customerDetailActions from '../actions/customerDetailActions.js';
 
 function mapStateToProps(state) {
-  return {customerDetail: state.customer}
+  return {
+    customerDetail: state.customer,
+    customerNotes: state.customer
+  }
 }
 
 // const mapStateToProps = ({state}) => ({
@@ -53,14 +57,18 @@ class CustomerDetailContainer extends Component
     
     console.log('🔴🟠🟡🟢🔵🟣 | file: CustomerDetailContainer.jsx | line 24 | CustomerDetailContainer | render | this.props.customerDetail', this);
     return (
-    <div className="agentScreen">
-    <p>Yada Yada</p>
+    <div className="agentScreen row-cols-2">
       
       <div className="customerDetails">
-        <p>Howdy</p>
         <CustomerDetail
           customerDetail={this.props.customerDetail}
-        />
+          />
+      </div>
+
+      <div className="customerNotes">
+          <TicketNotes
+            customerNotes={this.props.customerNotes}
+          />
       </div>
 
       {/* <div className="ticketNote">

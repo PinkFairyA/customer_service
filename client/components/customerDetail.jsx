@@ -8,7 +8,7 @@
  *
  * ************************************
  */
-import React, { Component } from 'react';
+import React from 'react';
  import { useDispatch} from 'react-redux'
 
 
@@ -16,7 +16,7 @@ const CustomerDetail = (props) => {
 // class CustomerDetail extends Component {
 
 
-const    handleIncrement = (product) => {
+const handleIncrement = (product) => {
     console.log(product);
     // this.setState({count: this.state.count + 1});
   };
@@ -47,7 +47,7 @@ const  connectToDB = () => {
     </button>
 
 
-      <div className="container border border-3 rounded-3 mt-2 px-2 border-info shadow">
+      <div className="container border border-3 rounded-3 mt-2 p-2 border-info shadow">
 
       <div className='row'>
         <div className='col-md-6'>

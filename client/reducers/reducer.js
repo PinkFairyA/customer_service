@@ -9,6 +9,7 @@ import { combineReducers } from 'redux';
 
 // import customerReducer from './customerReducer.js';
 import customer from './customerReducer.js';
+import note from './customerNotesReducer.js'
 
 // const reducers = combineReducers({
 //   customerDetails: customerReducer,
@@ -26,5 +27,6 @@ import customer from './customerReducer.js';
 // import client from './clientReducer.js';
 
 export default combineReducers({
-  customer
+  customer,
+  note
 });
