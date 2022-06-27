@@ -24,6 +24,22 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'svg-url-loader',
+            options: {
+              limit: 10000,
+            },
+          },
+        ],
+      },
+      // {
+      //   test: /\.svg$/i,
+      //   issuer: /\.[jt]sx?$/,
+      //   use: ['@svgr/webpack'],
+      // },
+      {
         test: /\.jsx?/,
         exclude: /(node_modules|bower_components)/,
         use: {

@@ -10,7 +10,6 @@ app.use(express.json());
 app.use('/', express.static(path.resolve(__dirname, '/public/')));
 app.use('/ticketRouter', ticketRouter);
 
-
 // Get request to respond with main ticket page(?). - IB
 // Home ticket page would go after __dirname
 app.get('/', (req, res) => {

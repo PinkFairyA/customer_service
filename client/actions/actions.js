@@ -25,6 +25,8 @@ export const addTicketRows = data => ({
 //     payload: data,
 //   });
 
+// export const addClient = data => ({
+//     type: types.ADD_CLIENT,
 // export const escalateTicket = data => ({
 //     type: types.ESCALATE_TICKET,
 //     payload: data,
