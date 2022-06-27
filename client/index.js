@@ -20,13 +20,11 @@ root.render(
 <Provider store={store}>
   <BrowserRouter>
     <div>
-<p>Go Team!</p>
       <Routes>
         <Route exact path="/" element={<App/>} />
         <Route path="/login" element={<Login />} />
         <Route path="/:id" element={<CustomerDetailContainer />}/>
       </Routes>
-<p>Yeah Team!</p>
     </div>
   </BrowserRouter>
  </Provider>
