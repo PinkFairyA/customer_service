@@ -1,3 +1,7 @@
+    //"build": "webpack",
+    //"dev": "webpack serve --open",
+    //"start": "nodemon server/server.js",
+
 /* eslint-disable prefer-named-capture-group */
 /* eslint-disable require-unicode-regexp */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -19,8 +23,13 @@ module.exports = {
     compress: false,
     port: 8080,
     historyApiFallback: true,
+    proxy: {
+      '/login': 'http://localhost:3000',
+    }
   },
-  mode: 'development',
+
+  // mode: 'development',
+  mode: process.env.NODE_ENV,
   module: {
     rules: [
       {

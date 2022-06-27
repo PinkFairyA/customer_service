@@ -1,14 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Nav from './Nav.jsx';
 import AgentPortal from './AgentPortal.jsx';
+import { useSelector } from 'react-redux';
+import { Redirect, useNavigate, Outlet } from 'react-router';
+import Login from './Login.jsx'
 
-//wrap the element that will redirect away from with Link
-//make sure to specify the route you want it to take, and keep this route in mind for setting up the index.js file
 export default function App(){
-    return(
-        <div>
-            < Nav />
-            <AgentPortal/>
-        </div>
-    );
+    const userloggedIn = useSelector((state) => state.customer.userloggedIn);
+    const navigate = useNavigate();
+        if(userloggedIn){
+            return(
+                <div>
+                    <Nav />
+                    <Outlet />
+                </div>
+            );
+        } else {
+            //navigate('/login', { replace: true });
+            return(
+            <div>
+                <Login />
+            </div>
+            );
+        }
+    // return(
+    //     <div>
+    //         <Nav />
+    //         <AgentPortal/>
+    //     </div>
+    // );
 }

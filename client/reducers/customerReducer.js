@@ -1,8 +1,10 @@
-import * as types from '../actions/actions.js';
+import * as types from '../constants/actionTypes.js';
 
 const initialState = {
-  ticketRowElements: [{ticket_id: 1, ticket_reason: 'Internet too slow', 
-      ticket_status: 'Open', first_name: 'John', last_name: 'Smith', create_tmstmp: '2022-06-24 12:00:00'}],
+  userloggedIn: false,
+  ticketRowElements: [],
+  //[{ticket_id: 1, ticket_reason: 'Internet too slow', 
+  //    ticket_status: 'Open', first_name: 'John', last_name: 'Smith', create_tmstmp: '2022-06-24 12:00:00'}],
 }
 
 // const initialState = {
@@ -42,6 +44,13 @@ const customerReducer = (state = initialState, action) => {
             return {
                 ...state,
                 ticketRowElements: action.payload,
+            }
+        }
+
+        case types.LOG_IN: {
+            return {
+                ...state,
+                userloggedIn: !state.userloggedIn,
             }
         }
         // case types.DELETE_TICKET: {
