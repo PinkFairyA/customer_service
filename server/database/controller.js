@@ -16,7 +16,16 @@ ticketController.postUsernameAndPassword = (req, res, next) => {
     // declare a variable called search and set it equal to the username column in the user_login table
     // include WHERE in the SQL query as opposed to just pulling ALL the data from all columns
     console.log(req.body);
-    const search = `SELECT username, password FROM rep_login WHERE USERNAME = $1`;
+    const search = `SELECT *
+    FROM (
+        SELECT username, password, 'Rep' person_type
+        FROM rep_login
+        
+        UNION
+        
+        SELECT username, password, 'Customer' person_type
+        FROM user_login) t
+    WHERE t.USERNAME = $1`;
     // pass an array into db.query labeled params
     const params = [ username ];
       // pass SQL query defined in search and params array into db.query
@@ -24,7 +33,7 @@ ticketController.postUsernameAndPassword = (req, res, next) => {
         .then(data => {
         if (data.rows.length !== 0) {
             if (data.rows[0].password === password) {
-            res.locals.userStatus = 'Success';
+            res.locals.userStatus = data.rows[0].person_type;
             return next();
         }
         else {

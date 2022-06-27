@@ -26,7 +26,7 @@ export default function Login(){
         )
         .then(data => data.json())
         .then(data => {
-            if(data === 'Success'){
+            if(data === 'Client' || data === 'Rep'){
                 dispatch(logIn());
             }else{
                 window.alert('Incorrect username or password')
