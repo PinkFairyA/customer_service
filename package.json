@@ -47,6 +47,7 @@
     "prettier-plugin-organize-imports": "^3.0.0",
     "prettier-plugin-packagejson": "^2.2.18",
     "react": "^18.2.0",
+    "react-datetime-picker": "^3.5.0",
     "react-dev-utils": "^12.0.1",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",

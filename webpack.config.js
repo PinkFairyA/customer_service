@@ -50,7 +50,9 @@ module.exports = {
         },
       },
       {
-        test: /\.s[ac]ss$/i,
+        // test: /\.s[ac]ss$/i,
+        // test: /\.s[ac]ss$/i,
+        test: /\.(s?(a|c)ss)$/i,
         use: [
           {
             loader: 'style-loader', // inject CSS to page

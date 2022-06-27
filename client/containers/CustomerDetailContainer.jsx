@@ -4,6 +4,7 @@ import { bindActionsCreators } from 'redux';
 import CustomerDetail from '../components/customerDetail.jsx';
 import TicketNotes from '../components/customerNotes.jsx';
 import TicketReason from '../components/ticketReason.jsx';
+import CustomerAppDateTime from '../components/customerAppDateTime.jsx'
 // import { TicketNote } from '../components/';
 // import { TicketDetail } from '../components/customerDetail';
 // import { CustomerHistory } from '../components/customerDetail';
@@ -60,12 +61,32 @@ class CustomerDetailContainer extends Component
     return (
     <div className="agentScreen mx-5">
         <div className="row">
+          
+
+
+
+          <dev className="d-flex flex-column">
             
       <div className="customerDetails col-md-6">
         <CustomerDetail
           customerDetail={this.props.customerDetail}
+            />
+      </div>
+
+      <div className="customerAppDateTime col-md-6">
+        <CustomerAppDateTime
+          customerDetail={this.props.customerDetail}
+            />
+      </div>
+          </dev>    
+          
+      <div className="customerNotes col-md-6">
+          <TicketNotes
+            customerNotes={this.props.customerNotes}
           />
       </div>
+
+
 
       <div className="ticketReason col-md-6">
           <TicketReason
@@ -76,18 +97,13 @@ class CustomerDetailContainer extends Component
 
 
         <div className="row">
-      <div className="customerNotes col-md-6">
-          <TicketNotes
-            customerNotes={this.props.customerNotes}
-          />
-      </div>
       <div className="customerHistory col-md-6">
           <TicketNotes
             customerNotes={this.props.customerNotes}
           />
       </div>
-
       </div>
+
       {/* <div className="ticketNote">
         <TicketNote
           ticketNote={this.props.ticketNote}
