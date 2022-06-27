@@ -3,6 +3,22 @@ const router = express.Router();
 
 const ticketController = require('./database/controller.js');
 
+router.post('/login',
+  ticketController.postUsernameAndPassword,
+  (req, res) => res.status(200).json(res.locals.userStatus)
+);
+
+router.get('/getTickets',
+  ticketController.getTicket,
+  (req, res) => {
+    return res.status(200).json(res.locals.ticket)}
+);
+
+router.get('/getTickets/:id',
+  ticketController.getCustomer,
+  (req, res) => res.status(200).json(res.locals.customer)
+);
+
 // router
 //   .route('/')
 //   .get((req, res, next) => {
@@ -46,30 +62,11 @@ const ticketController = require('./database/controller.js');
 //   });
 
 // Getting login page information 
-router.get('/',
-  ticketController.getCustomer, 
-  (req, res) => res.status(200).json(res.locals.customer)
-);
-
-router.post('/login',
-  ticketController.postUsernameAndPassword,
-  (req, res) => res.status(200).json(res.locals.userStatus)
-);
-
-// router.get('/species',
-//   starWarsController.getSpecies,
-//   (req, res) => res.status(200).json({})
+// router.get('/',
+//   ticketController.getCustomer, 
+//   (req, res) => res.status(200).json(res.locals.customer)
 // );
 
-// router.get('/homeworld',
-//   starWarsController.getHomeworld,
-//   (req, res) => res.status(200).json({})
-// );
-
-// router.get('/film',
-//   starWarsController.getFilm,
-//   (req, res) => res.status(200).json({})
-// );
 
 
 
