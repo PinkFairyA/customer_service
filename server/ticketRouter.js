@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+// const bcrypt = require('bcrypt');
+// const workFactor = 12;
 
 const ticketController = require('./database/controller.js');
 
@@ -18,6 +20,8 @@ router.get('/getTickets/:id',
   ticketController.getCustomer,
   (req, res) => res.status(200).json(res.locals.customer)
 );
+
+
 
 // router
 //   .route('/')
