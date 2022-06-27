@@ -6,12 +6,26 @@ import  CustomerDetail  from '../components/customerDetail.jsx';
 // import { TicketDetail } from '../components/customerDetail';
 // import { CustomerHistory } from '../components/customerDetail';
 
+
+
+
+//* Fetch Data from here.
+
+
+
+
+
 import * as customerDetailActions from '../actions/customerDetailActions.js';
-// function mapStateToProps(state, ownProps) {
+
 function mapStateToProps(state) {
-  // const mapStateToProps = state => ({
-  return {customerDetail: state.customerDetail}
+  return {customerDetail: state.customer}
 }
+
+// const mapStateToProps = ({state}) => ({
+  // customerDetail: state.customerDetail
+  //});
+
+
 
 function mapDispatchToProps(dispatch) {
 return {actions: bindActionCreators(customerDetailActions, dispatch)}
@@ -19,7 +33,6 @@ return {actions: bindActionCreators(customerDetailActions, dispatch)}
 
 
 // const mapStateToProps = state => ({
-
 // })
 
 

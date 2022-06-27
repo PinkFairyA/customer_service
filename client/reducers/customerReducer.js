@@ -2,7 +2,7 @@ import * as types from '../actions/actions.js';
 
 const initialState = {
   firstName: 'Jimbo',
-  lastName: 'White',
+  lastName: 'Whsdfsdfsite',
   address: '6 Moultie St',
   city: 'Boston',
   st: 'MA',
