@@ -42,9 +42,9 @@ const AgentPortal = (props) => {
   //<Link to={'/' + props.ticket_id<}>props.ticket_id<</Link>
 
   // UNCOMMENT WHEN BACK END CONNECTION IS WORKING
-  fetch('/getTickets')
-    .then((data) => data.json())
-    .then((data) => dispatch(addTicketRows(data)));
+  // fetch('/getTickets')
+  //   .then((data) => data.json())
+  //   .then((data) => dispatch(addTicketRows(data)));
 
   return (
     <div className='agent-portal-container'>
