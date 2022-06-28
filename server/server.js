@@ -4,11 +4,18 @@ const app = express();
 const PORT = 3000;
 
 const ticketRouter = require('./ticketRouter.js');
+const ticketController = require('./database/controller.js')
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/build', express.static(path.join(__dirname, '../build')));
 app.use(express.static(path.join(__dirname, '../client')));
+
+app.get('/getTickets/:id',
+  ticketController.getCustomer,
+  (req, res) => res.status(200).json(res.locals.customer)
+);
+
 app.use('/', ticketRouter);
 
 // Get request to respond with main ticket page(?). - IB

@@ -23,6 +23,11 @@ export const logIn = () => ({
   type: types.LOG_IN,
 })
 
+export const loadTicket = data => ({
+  type: types.LOAD_TICKET,
+  payload: data,
+  })
+
 // export const deleteTicket = data => ({
 //     type: types.DELETE_TICKET,
 //     payload: data,

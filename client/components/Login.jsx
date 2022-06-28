@@ -2,6 +2,8 @@ import React, { Component, useRef, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import '../styles/loginstyles.scss';
 import { logIn } from '../actions/actions.js';
+// import { Link } from 'react-router-dom';
+import backgroundPic from '../../public/pinkfairy.jpg';
 
 
 export default function Login(){
@@ -37,6 +39,7 @@ export default function Login(){
     return(
         <div>
            <main id="mainpage">
+              <img id="pic" src={backgroundPic} />
                 <div id="login-container">
                     <h4>Login</h4>
                     <div className='username-container'>
@@ -48,11 +51,13 @@ export default function Login(){
                         <input type='password' id='password-input' ref={passRef}/>
                     </div>
                     <button id="button" onClick={handleSubmit}>Submit</button>
+                    <a href={"https://www.youtube.com/watch?v=dQw4w9WgXcQ"}>Create a New Account</a>
                 </div>
            </main>
         </div>
     );
 }
+
 
 //jwt steps: if we get to this...
 /*
