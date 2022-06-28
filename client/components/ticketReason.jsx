@@ -53,20 +53,18 @@ const TicketReason = (props) => {
       Hi there,
     </h2>
     <p>
-      Now is the time for all good men and women to come to the aid of their country.
-       Sure, there are all kind of basic text styles you’d probably expect from a text editor. But wait until you see the lists:
-    </p>
+    Cannot connect to the Internet. Possible issue with router.    </p>
     <ul>
       <li>
-        That’s a bullet list with one …
+        YES — It is plugged in!!
       </li>
       <li>
-        … or two list items.
+      YES — I have Paid my bill!
+      </li>
+      <li>
+      YES — I have rebooted everything!
       </li>
     </ul>
-    <p>
-      Isn’t that great? And all of that is editable. But wait, there’s more. Let’s try a code block:
-    </p>
   `,
   })
   

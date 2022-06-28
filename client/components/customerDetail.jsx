@@ -40,12 +40,6 @@ const  connectToDB = () => {
 
   return (
     <div className='container  border border-3 rounded-3 mt-2 p-2 border-info shadow'>
-    <button
-      onClick={() => this.connectToDB()}
-      className='btn btn-primary btn-sm m-2'>
-      Fetch Customer Info
-    </button>
-
 
       <div className="container">
 

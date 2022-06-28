@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {loadTicket} from '../actions/actions.js';
+import { loadTicket } from '../actions/actions.js';
+import React from 'react';
 import CustomerAppDateTime from '../components/customerAppDateTime.jsx';
 import CustomerDetail from '../components/customerDetail.jsx';
 import TicketNotes from '../components/customerNotes.jsx';
@@ -28,9 +28,7 @@ const CustomerDetailContainer = (props) => {
 
   fetch('/getTickets' + window.location.pathname)
     .then((data) => data.json())
-    .then((data) =>
-      loadTicket([window.location.pathname, data])
-    )
+    .then((data) => loadTicket([window.location.pathname, data]))
     .catch((error) => console.log(error));
 
   //   componentDidMount() {
@@ -43,48 +41,28 @@ const CustomerDetailContainer = (props) => {
   return (
     <div className='agentScreen mx-5'>
       <div className='row'>
-        <dev className='d-flex flex-column'>
-          <div className='customerDetails col-md-6'>
-            <CustomerDetail customerDetail={customerDetail} />
-          </div>
+                    <div className='col-md-6'>
+                            <dev className='d-flex flex-column'>
+                              <div className='customerDetails'>
+                                <CustomerDetail customerDetail={customerDetail} />
+                              </div>
 
-          <div className='customerAppDateTime col-md-6'>
-            <CustomerAppDateTime customerDetail={customerDetail} />
-          </div>
-        </dev>
+                              <div className='customerAppDateTime'>
+                                <CustomerAppDateTime customerDetail={customerDetail} />
+                              </div>
 
-        <div className='customerNotes col-md-6'>
-          <TicketNotes customerNotes={customerNotes} />
-        </div>
+                              <div className='customerNotes'>
+                                <TicketNotes customerNotes={customerNotes} />
+                              </div>
+                            </dev>
+                    </div>
 
-        <div className='ticketReason col-md-6'>
-          <TicketReason customerNotes={customerNotes} />
-        </div>
+                    <div className='col-md-6'>
+                      <div className='ticketReason'>
+                        <TicketReason customerNotes={customerNotes} />
+                      </div>
+                    </div>
       </div>
-
-      <div className='row'>
-        <div className='customerHistory col-md-6'>
-          <TicketNotes customerNotes={customerNotes} />
-        </div>
-      </div>
-
-      {/* <div className="ticketNote">
-        <TicketNote
-          ticketNote={this.props.ticketNote}
-        />
-      </div>
-
-      <div className="ticketDetail">
-        <TicketDetail
-          ticketDetail={this.props.ticketDetail}
-        />
-      </div>
-
-      <div className="customerDetails">
-        <CustomerHistory
-          customerHistory={this.props.customerHistory}
-        />
-      </div> */}
     </div>
   );
   //}
