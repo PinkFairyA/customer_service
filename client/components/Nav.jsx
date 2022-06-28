@@ -20,7 +20,7 @@ export default function Nav(){
                     <h4>Archive</h4>
                     <h4>Unread</h4>
                     <h4>Settings</h4>
-                    <button onClick={() => {dispatch(logIn())}}>LogOut</button>
+                    <button id="button" onClick={() => {dispatch(logIn())}}>LogOut</button>
                 </div>
             </div>
         </nav>
