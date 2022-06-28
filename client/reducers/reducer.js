@@ -9,7 +9,7 @@ import { combineReducers } from 'redux';
 
 // import customerReducer from './customerReducer.js';
 import customer from './customerReducer.js';
-import note from './customerNotesReducer.js'
+// import note from './customerNotesReducer.js'
 
 // const reducers = combineReducers({
 //   customerDetails: customerReducer,
@@ -28,5 +28,5 @@ import note from './customerNotesReducer.js'
 
 export default combineReducers({
   customer,
-  note
+  // note
 });

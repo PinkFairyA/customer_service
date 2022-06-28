@@ -52,11 +52,11 @@ const  connectToDB = () => {
       <div className='row'>
         <div className='col-md-6'>
           <label htmlFor='inputFirst'>First</label>
-          <input type='text' className='form-control shadow h-50 border border-primary bg-info bg-opacity-10' id='inputFirst' defaultValue={props.customerDetail.firstName}></input>
+          <input type='text' className='form-control shadow h-50 border border-primary bg-info bg-opacity-10' id='inputFirst' defaultValue={props.customerDetail.first_name}></input>
         </div>
         <div className='col-md-6'>
           <label htmlFor='inputLast'>Last</label>
-          <input type='text' className='form-control shadow h-50 border border-primary bg-info bg-opacity-10' id='inputLast' defaultValue={props.customerDetail.lastName}></input>
+          <input type='text' className='form-control shadow h-50 border border-primary bg-info bg-opacity-10' id='inputLast' defaultValue={props.customerDetail.last_name}></input>
         </div>
         </div>
         {/* <span className='shadow border border-info px-3 py-1 m-50 btn-light rounded-3 bg-info bg-opacity-10 '>Howdy!</span>
@@ -64,7 +64,7 @@ const  connectToDB = () => {
       <div className='row'>
         <div className='col-md-12'>
           <label htmlFor='inputAddress'>Address</label>
-          <input type='text' className='form-control shadow h-50 border border-primary bg-info bg-opacity-10' id='inputAddress' defaultValue={props.customerDetail.address}></input>
+          <input type='text' className='form-control shadow h-50 border border-primary bg-info bg-opacity-10' id='inputAddress' defaultValue={props.customerDetail.street_address}></input>
         </div>
       </div>
       <div className='row'>
@@ -74,11 +74,11 @@ const  connectToDB = () => {
         </div>
         <div className='col-md-2'>
           <label htmlFor='inputState'>State</label>
-          <input type='text' className='form-control shadow h-50 border border-primary bg-info bg-opacity-10' id='inputState' defaultValue={props.customerDetail.st}></input>
+          <input type='text' className='form-control shadow h-50 border border-primary bg-info bg-opacity-10' id='inputState' defaultValue={props.customerDetail.state}></input>
         </div>
         <div className='col-md-4'>
           <label htmlFor='inputZip'>Zip</label>
-          <input type='text' className='form-control shadow h-50 border border-primary bg-info bg-opacity-10' id='inputZip' defaultValue={props.customerDetail.zip}></input>
+          <input type='text' className='form-control shadow h-50 border border-primary bg-info bg-opacity-10' id='inputZip' defaultValue={props.customerDetail.zip_code}></input>
         </div>
       </div>
       <div className='row'>

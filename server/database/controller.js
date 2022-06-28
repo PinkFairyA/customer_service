@@ -58,42 +58,56 @@ ticketController.postUsernameAndPassword = (req, res, next) => {
 // Customer Detail component (Top Left of Excalidraw): Name, Address, Phone and E-mail 
 // from users table: first-name, last_name, street_address, phone, email
 ticketController.getCustomer = (req, res, next) => {
-    // most likely going to use req.body, but have to communicate that with whoever is working on what page (i.e. home page or login page)
-    const { first_name, last_name, street_address, phone, email } = req.body;
-    // include WHERE in the SQL query as opposed to just pulling ALL the data from all columns
-    
-    // Want the WHERE condition to be where user.id = ticket.user_id based on current ticketID displayed.
-    // join in ticket table. then filter user by ticket. 
-    // distinct in select statement. - only returns distinct rows. 
-    
-    const text = `SELECT DISTINCT u.first_name, u.last_name, u.street_address, u.phone, u.email 
+  // most likely going to use req.body, but have to communicate that with whoever is working on what page (i.e. home page or login page)
+  // const { first_name, last_name, street_address, phone, email } = req.body;
+  // include WHERE in the SQL query as opposed to just pulling ALL the data from all columns
+
+  // Want the WHERE condition to be where user.id = ticket.user_id based on current ticketID displayed.
+  // join in ticket table. then filter user by ticket.
+  // distinct in select statement. - only returns distinct rows.
+
+  const text = `SELECT DISTINCT u.first_name, u.last_name, u.street_address, u.phone, u.email 
     FROM users u 
     INNER JOIN ticket t ON u.id = t.user_id
     WHERE t.id = $1`;
 
-    // setting up customer history 
-    // table with all tickets from a single user id 
-    /* WITH userInfo AS (
+  // setting up customer history
+  // table with all tickets from a single user id
+  /* WITH userInfo AS (
         SELECT user_id from ticket t where t.id = $1
     )
     SELECT *
         FROM ticket t 
         INNER JOIN user_info ui on t.user_id = ui.user_id
     ) */
-    const history = `WITH userInfo AS (SELECT user_id FROM ticket t WHERE t.id = $1) 
+  const history = `WITH userInfo AS (SELECT user_id FROM ticket t WHERE t.id = $1) 
     SELECT t.* 
     FROM ticket t 
-    INNER JOIN userInfo ui on t.user_id = ui.user_id`     
-    Promise.all(db.query(text, [req.params.id]), db.query(history))
-    .then(data => {
-        res.locals.customer = data;
-    
-        next();
+    INNER JOIN userInfo ui on t.user_id = ui.user_id`;
+  res.locals.customer = {};
+  console.log(req.params.id);
+  db.query(text, [req.params.id])
+    .then((data) => {
+      console.log('🔴🟠🟡🟢🔵🟣 | file: controller.js | line 90 | data', data);
+      res.locals.customer['user_data'] = data.rows;
+      db.query(history, [req.params.id])
+        .then((data2) => {
+          res.locals.custmer['ticket_data'] = data2.rows;
+          return next();
+        })
+        .catch((err) => next(err));
     })
-    .catch(err => {
-        next({message: {err: 'Error in getCustomer middleware function.'}})
-    });
-        
+    .catch((err) => next(err));
+  //   Promise.all(db.query(text, [req.params.id]), db.query(history, [req.params.id]))
+  //     .then((data) => {
+  //       console.log(data);
+  //       res.locals.customer.push(data);
+
+  //       next();
+  //     })
+  //     .catch((err) => {
+  //       next({message: {err: 'Error in getCustomer middleware function.'}});
+  //     });
 }
 
 // Ticket Note component 

@@ -11,6 +11,7 @@
 
 // add action type constants i.e.:
 // export const ACTION_DESCRIPTION = "ACTION_DESCRIPTION";
+export const LOAD_TICKET = 'LOAD_TICKET';
 export const LOG_IN = 'LOG_IN';
 export const ADD_TICKET = 'ADD_TICKET';
 export const DELETE_TICKET = 'DELETE_TICKET';

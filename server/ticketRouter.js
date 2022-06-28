@@ -10,15 +10,15 @@ router.post('/login',
   (req, res) => res.status(200).json(res.locals.userStatus)
 );
 
+router.get('/getTickets/:id',
+  ticketController.getCustomer,
+  (req, res) => res.status(200).json(res.locals.customer)
+);
+
 router.get('/getTickets',
   ticketController.getTicket,
   (req, res) => {
     return res.status(200).json(res.locals.ticket)}
-);
-
-router.get('/getTickets/:id',
-  ticketController.getCustomer,
-  (req, res) => res.status(200).json(res.locals.customer)
 );
 
 
